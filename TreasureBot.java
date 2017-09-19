@@ -7,13 +7,56 @@ import kareltherobot.*;
  */
 public class TreasureBot extends Robot
 {
+    public int beepers;
     public TreasureBot(int st, int av, Direction dir, int numBeepers) {
         super(st, av, dir, numBeepers);
     }
     
     public void findTreasure() {
-        
+        while (beepers != 5) {
+        moveToClue();
+        readClue();
+        putBackClue();
+    
     }
-   
+}
+public void moveToClue() {
+        while (!nextToABeeper()) {
+            move();
+        }
+    }
+public void readClue() {
+        while (nextToABeeper()) {
+            pickBeeper();
+            beepers++;
+            if (beepers == 1) {
+                while (!facingNorth()) {
+                    turnLeft();
+                }
+            }
+            else if (beepers == 2) {
+                while (!facingEast()) {
+                    turnLeft();
+                }
+            }
+            else if (beepers == 3) {
+                while (!facingSouth()) {
+                    turnLeft();
+                }
+            }
+            else if (beepers == 4) {
+                while (!facingWest()) {
+                    turnLeft();
+                }
+            }
+        }
+    }
+public void putBackClue() {
+        for (int i = 0; i < beepers; i++) {
+            putBeeper();
+            beepers--;
+        }
+        move();
+    }
 }
 

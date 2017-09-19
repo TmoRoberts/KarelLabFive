@@ -1,6 +1,8 @@
 #BlueJ class context
-comment0.params=st\ av\ dir\ numBeepers
-comment0.target=DemocracyBot(int,\ int,\ Direction,\ int)
-comment1.params=
-comment1.target=void\ fixBallots()
-numComments=2
+comment0.target=DemocracyBot
+comment0.text=\r\n\ @author\ \:\ \ D.\ Appel\r\n
+comment1.params=st\ av\ dir\ numBeepers
+comment1.target=DemocracyBot(int,\ int,\ Direction,\ int)
+comment2.params=
+comment2.target=void\ fixBallots()
+numComments=3
