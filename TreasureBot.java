@@ -16,8 +16,10 @@ public class TreasureBot extends Robot
         while (beepers != 5) {
         moveToClue();
         readClue();
+        if (beepers == 5) {
+            turnOff();
+        }
         putBackClue();
-    
     }
 }
 public void moveToClue() {
@@ -52,7 +54,7 @@ public void readClue() {
         }
     }
 public void putBackClue() {
-        for (int i = 0; i < beepers; i++) {
+        while (beepers > 0) {
             putBeeper();
             beepers--;
         }
